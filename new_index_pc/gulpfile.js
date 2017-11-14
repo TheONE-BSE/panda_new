@@ -7,7 +7,8 @@ var reload      = browserSync.reload;
 
 var paths = {
 	less: ['./less/*.less'],       //less文件夹，下所有的less文件
-	js: ['./js/*.js']   
+	js: ['./js/*.js'],
+    html: ['./html/*.html']
 	// js文件夹下、当前路径下所有的js文件
 };
 
@@ -42,6 +43,7 @@ gulp.task('watch', function() {
 			port: 4000
         }
     });
+    gulp.watch(paths.html).on('change',reload);
 	gulp.watch(paths.less, ['less']);
 	gulp.watch(paths.js, ['scripts']);
 });

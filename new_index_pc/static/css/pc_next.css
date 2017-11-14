@@ -367,3 +367,69 @@ textarea::-webkit-input-placeholder {
   margin-top: 20px;
   font-size: 16px;
 }
+.g-bd .m-footer {
+  background: #444545;
+  padding-bottom: 20px;
+}
+.g-bd .m-footer .inner {
+  padding-top: 24px;
+  color: #bdbdbd;
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 0;
+}
+.g-bd .m-footer .inner ul {
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+.g-bd .m-footer .inner .item {
+  float: left;
+}
+.g-bd .m-footer .inner .item:nth-child(1) {
+  margin-right: 120px;
+  text-align: left;
+}
+.g-bd .m-footer .inner .item:nth-child(2) {
+  margin-right: 80px;
+}
+.g-bd .m-footer .inner .item .about-us {
+  color: #1a9c8b;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.g-bd .m-footer .inner .item .phone,
+.g-bd .m-footer .inner .item .time {
+  padding-left: 24px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.g-bd .m-footer .inner .item .phone {
+  background: url(../images/phone-foot.png) left center no-repeat;
+}
+.g-bd .m-footer .inner .item .time {
+  background: url(../images/time.png) left center no-repeat;
+}
+.g-bd .m-footer .inner .item .wechat,
+.g-bd .m-footer .inner .item .desc {
+  display: inline-block;
+  vertical-align: middle;
+}
+.g-bd .m-footer .inner .item .wechat {
+  box-shadow: -11px 13px 5px 0px #5c5d5d;
+  margin-right: 18px;
+}
+.g-bd .m-footer .inner .item .desc {
+  font-size: 16px;
+  position: relative;
+}
+.g-bd .m-footer .inner .item .desc:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: #848484;
+}

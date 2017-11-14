@@ -1,3 +1,4 @@
+@import url('./reset.less');
 @-webkit-keyframes arrow {
     0%,
     30% {
@@ -32,7 +33,120 @@
         transform: translate(0, 10px);
     }
 }
-
+.k-alert{
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 99999;
+    .alert-container{
+        background-color: #fff;
+        text-align: justify;
+        min-width: 265px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        border-radius: 5px;
+        .title{
+            text-align: center;
+            color: #000;
+            border-bottom: 1px solid #d9d9d9;
+            padding: 0 0 10px 0;
+            font-size: 18px;
+        }
+        .content{
+            color: #666;
+            padding: 20px 0;
+        }
+        .confirm{
+            background-color: #1eccb5;
+            width: 100%;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 5px;
+            padding: 6px 0;
+            font-size: 16px;
+        }
+    }
+}
+.signin-popup{
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  .mask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+  }
+  form{
+    width: 370px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    z-index: 9999;
+    padding: 40px 35px;
+    border-radius: 8px;
+    .input-con{
+      font-size: 15px;
+      margin-bottom: 30px;
+      padding: 3px 0;
+      width: 100%;
+      border-bottom: 1px solid #ddd;
+      input{
+        display: inline-block;
+        border: none;
+        outline: none;
+        width: 100%;
+        background-repeat: no-repeat;
+        padding: 5px 0 5px 30px;
+      }
+      #mobile{
+        background-image: url(../images/i-mobile.png);
+        background-size: auto 25px;
+        background-position: 3px center;
+      }
+      #code{
+        background-image: url(../images/i-eye.png);
+        background-size: 24px auto;
+        background-position: left center;
+        width: 63%;
+      }
+      .btn-captcha{
+        display: inline-block;
+        width: 35%;
+        color: #1eccb5;
+        background: transparent;
+        border: none;
+      }
+    }
+    .btn-con{
+      text-align: center;
+      .btn-signin{
+        font-size: 20px;
+        display: inline-block;
+        border: none;
+        background-color: #1eccb5;
+        color: #fff;
+        padding: 7px 20px;
+        border-radius: 5px;
+      }
+    }
+  }
+}
 .wrapper{
   height: 100%;
   width: 100%;
@@ -112,6 +226,7 @@
           padding-left:24px; 
           background: url(../images/phone.png) left center no-repeat ;
           background-size: contain;
+          margin-top: 25px;
         }
       }
       .title{
@@ -131,7 +246,7 @@
           margin-top: 10px;
           font-size: 50px;
           letter-spacing: 3px;
-          color: #ccc;
+          color: rgba(255,255,255,0.8);
           position: relative;
           &:after{
             content:'';
@@ -149,11 +264,11 @@
 	        height: 56px;
           line-height: 56px;
           border-radius: 6px;
-          border: solid 1px #1cb09c;
+          border: solid 1px #1fffe0;
           font-size: 28px;
           font-weight: 300;
           text-align: center;
-          color: #24af9c;
+          color: #1fffe0;
           margin-top: 24px;
           font-weight: bold;
           cursor: pointer;
@@ -188,11 +303,12 @@
           vertical-align: middle;
           display: inline-block;
           width: 30%;
-          margin-right: 20px;
+          margin-right: 25px;
           box-shadow: 0px 10px 30px -5px #ccc, 0px 10px 30px -5px #ccc;
-          transition: all .2s linear;
+          transition: all .15s linear;
           &:hover{
-            transform: translateY(-10px);
+            transform: scale(1.02);
+            -webkit-transform: scale(1.1);
             box-shadow: 0px 10px 50px 0px #ccc, 0px 10px 50px 0px #ccc;
           }
           &:last-child{
@@ -262,30 +378,37 @@
       background-size: contain;
       position: relative;
       margin-right: 54px;
-      width: 43%;
-      .mask{
+      width: 400px;
+      height: 620px;
+      .swiper-container{
         position: absolute;
-        top: 114px;
-        bottom: 0;
-        left: 40px;
-        right: 18px;
-        background: rgba(0, 0, 0, .4);
-        img{
-          width: 46px;
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%,-50%);
-          cursor: pointer;
-          z-index: 1;
-        }
+        top: 69px;
+        bottom: 1px;
+        left: 55px;
+        right: 36px;
+        
       }
     }
     .right  {
-      transform: translateY(-12px);
+      height: 605px;
       width: 50%;
       box-shadow: -11px 13px 5px 0px #ebebeb;
+      position: relative;
+      &:after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        width: 200px;
+        height: 180px;
+        border-radius: 50%;
+        background: #ffe89d;
+        top: -50px;
+        left: 50%;
+        margin-left: -100px;
+      }
       .top{
+        position: relative;
+        z-index: 9;
         height: 280px;
         padding-top: 22px;
         padding-bottom: 20px;
@@ -293,14 +416,14 @@
         text-align: center;
         .avatar{
           width: 158px;
-          margin: 0 auto;
+          margin: -60px auto 0;
           img{
             max-width: 100%;
             height: auto;
           }
         }
         .info{
-          padding-top: 8px;
+          padding-top: 30px;
           .name{
             width: 70%;
             margin: 0 auto;
@@ -475,7 +598,7 @@
   }
   .m-langlang{
     transform: translateY(-46px);
-    height: 450px;
+    height: 461px;
     position: relative;
     background: url(../images/langlang.jpg) center center no-repeat;
     background-size: cover;

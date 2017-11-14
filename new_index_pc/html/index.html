@@ -5,11 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="stylesheet" href="../static/css/reset.css">
-    <link rel="stylesheet" href="../static/css/index.css" >
+    <link rel="stylesheet" href="../static/css/swiper.min.css">
+    <link rel="stylesheet" href="../static/css/index.css">
   </head>
   <body>
     <div class="wrapper">
+        <div class="signin-popup">
+            <div class="mask"></div>
+            <!-- 
+                弹窗form，需要根据后端变量名修改input name
+            -->
+            <form action="#" method="GET">
+                <div class="input-con">
+                    <input type="text" id="mobile" name="mobile" placeholder="请输入手机号">
+                </div>
+                <div class="input-con">
+                    <input type="text" id="code" name="code" placeholder="请输入验证码">
+                    <button class="btn-captcha" id="captcha">获取验证码</button>
+                </div>
+                <div class="btn-con">
+                    <button class="btn-signin">
+                       免费领取测评课 
+                    </button>
+                </div>
+            </form>
+        </div>
       <div class="g-sec m-banner">
         <video preload="auto" autoplay="true" loop="true" class="m-video-bg">
             <source src="http://static.1tai.com/videos/panda-index.mp4" />
@@ -29,7 +49,7 @@
             <div class="title">
               <div class="tit">熊猫钢琴陪练</div>
               <div class="sub-tit">考级陪练专家</div>
-              <div class="desc">免费领取测评课</div>
+              <div class="desc" id="signup">免费领取测评课</div>
             </div>
             <div class="text">
               <img src="../static/images/next-page.png" alt="" id="nextPage">
@@ -87,17 +107,33 @@
           </div>
           <div class="content">
             <div class="left box">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide-1">
+                            <img src="../static/images/1o.jpg">
+                        </div>
+                        <div class="swiper-slide slide-2">
+                            <img src="../static/images/2o.jpg">
+                        </div>
+                        <div class="swiper-slide slide-3">
+                            <img src="../static/images/3o.jpg">
+                        </div>
+                        <div class="swiper-slide slide-4">
+                            <img src="../static/images/4o.jpg">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="right box">
               <div class="top">
                 <div class="avatar">
-                  <img src="../static/images/dahua.png" alt="">
+                  <img src="../static/images/congcong.png" alt="">
                 </div>
                 <div class="info">
-                  <p class="name"> <span>大花</span>9岁</p>
+                  <p class="name"> <span>聪聪</span>9岁</p>
                   <div class="desc">
                     <p class="time"><span>学琴时间：</span>3年</p>
-                    <p class="teacher"><span>陪练老师：</span> 费鹏</p>
+                    <p class="teacher"><span>陪练老师：</span> 于珺</p>
                   </div>
                 </div>
               </div>
@@ -108,7 +144,7 @@
                 </div>
                 <div class="evaluate">
                   <div class="tit">家长评价：</div>
-                  <div class="cont">费老师教的很棒，可以一个小节一个小节分段练习。<br>孩子的练琴有了好的方法，最近喜欢上了练琴。</div>
+                  <div class="cont">于老师教的很棒，可以一个小节一个小节分段练习。<br>孩子的练琴有了好的方法，最近喜欢上了练琴。</div>
                 </div>
               </div>
             </div>
@@ -245,6 +281,7 @@
       </div>
     </div>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+    <script src="../static/js/swiper.min.js"></script>
     <script src="../static/js/main.min.js"></script>
   </body>
 </html>
