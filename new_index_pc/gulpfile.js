@@ -3,6 +3,8 @@ var less = require('gulp-less');
 var concat = require('gulp-concat');
 var plumber = require('gulp-plumber');  // 错误捕捉插件
 var browserSync = require('browser-sync').create();
+var autoprefixer = require('gulp-autoprefixer')
+var cleanCSS = require('gulp-clean-css')
 var reload      = browserSync.reload;
 
 var paths = {
@@ -17,6 +19,12 @@ gulp.task('less', function () {
 	//将less文件夹下的style.less 转为style.css,放在assets文件夹下
 	.pipe(plumber())
 	.pipe(less())
+    .pipe(autoprefixer({
+      browsers: ['last 4 versions', 'ie >= 8'],
+      cascade: true,
+      remove: true
+    }))
+    .pipe(cleanCSS({compatibility: 'ie8'}))
 	.pipe(gulp.dest('./static/css/'))
 	.pipe(reload({stream: true}));
 });
